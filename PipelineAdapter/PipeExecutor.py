@@ -53,8 +53,12 @@ def get_execution_result(results):
   # end while
 
 def import_module(module_name):
-  result = module_name.split(".")
-  return ".".join(result[:len(result)-1])
+  tmp = module_name.split(".")
+  package = ".".join(tmp[:len(tmp)-1])
+  print("Package: ", package)
+  module = tmp[len(tmp)-1]
+  print("Module: ", module)
+  return module
 # end def
 
 # end def
