@@ -52,8 +52,9 @@ def get_execution_result(results):
   
   # end while
 
-  def import_module(module_name):
-    return module_name.split('.')
-  # end def
+def import_module(module_name):
+  result = module_name.split(".")
+  return result
+# end def
 
 # end def
