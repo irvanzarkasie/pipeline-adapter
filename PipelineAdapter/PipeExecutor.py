@@ -23,6 +23,7 @@ def execute(*args, **kwargs):
   output = None
   print(input)
   for arg in args:
+    import_function(arg)
     output = arg(**input)
     logger.debug("Yield output " + str(output) + " from " + str(arg) + " pipeline")
     input = output
@@ -53,15 +54,17 @@ def get_execution_result(results):
   
   # end while
 
-def import_module(module_name):
-  tmp = module_name.split(".")
+# end def
+
+def import_function(function_name):
+  tmp = function_name.split(".")
   module = ".".join(tmp[:len(tmp)-1])
   print("Module: ", module)
+  logger.debug("Module to be imported: " + module)
   funct = tmp[len(tmp)-1]
   print("Function: ", funct)
+  logger.debug("Function to be executed: " + funct)
   importlib.import_module(module)
-  print("Module ", module, " imported")
-  return module
-# end def
+  logger.debug("Module " + module + " imported")
 
 # end def
