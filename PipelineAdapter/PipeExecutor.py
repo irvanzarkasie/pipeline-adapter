@@ -1,4 +1,5 @@
 from LoggerWrapper import LoggerWrapper
+import importlib
 
 # Initialize logger
 logger = LoggerWrapper.init_logger(__name__)
@@ -54,10 +55,12 @@ def get_execution_result(results):
 
 def import_module(module_name):
   tmp = module_name.split(".")
-  package = ".".join(tmp[:len(tmp)-1])
-  print("Package: ", package)
-  module = tmp[len(tmp)-1]
+  module = ".".join(tmp[:len(tmp)-1])
   print("Module: ", module)
+  funct = tmp[len(tmp)-1]
+  print("Function: ", funct)
+  importlib.import_module(module)
+  print("Module ", module, " imported")
   return module
 # end def
 
