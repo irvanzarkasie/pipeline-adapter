@@ -54,7 +54,7 @@ def get_execution_result(results):
 
 def import_module(module_name):
   result = module_name.split(".")
-  return result
+  return ".".join(result[:len(result)])
 # end def
 
 # end def
