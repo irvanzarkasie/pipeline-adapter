@@ -1,0 +1,6 @@
+package:
+  name: pipeline-adapter
+  version: 0.1
+
+source:
+  path: .
